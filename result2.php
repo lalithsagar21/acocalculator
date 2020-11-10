@@ -70,7 +70,7 @@
             </div>
             <div class="col-md-3 img-container">
                <div  class="img-container">
-                  <a type="button" data-toggle="modal" data-target="#exampleModalCenter" class="button btn-primary button-medium">Let's Talk</a>
+                  <a type="button" data-toggle="modal" data-target="#exampleModalCenter" class="button btn-primary button-medium white">Let's Talk</a>
                </div>
             </div>
             </div> 
