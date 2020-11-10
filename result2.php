@@ -27,21 +27,12 @@
       <!-- Navigation-->
       <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
          <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href=""><img class="logo" src="assets/img/privia.png" alt="" /></a>
-            <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-               <ul class="navbar-nav ml-auto">
-                  <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">who we care</a></li>
-                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">what we do</a></li>
-                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">For Doctors</a></li> -->
-                  <li><a type="button" class="button yellow" data-toggle="modal" data-target="#exampleModalCenter">
-                     Get In Touch</a>
-                  </li>
-               </ul>
-            </div>
+            <ul class="nav navbar-nav navbar-left">
+               <li><a class="navbar-brand js-scroll-trigger" href=""><img class="logo" src="./assets/img/privia.png" alt="" /></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+               <li><a type="button" class="button yellow" data-toggle="modal" data-target="#exampleModalCenter">Get In Touch</a></li>
+            </ul>
          </div>
       </nav>
       <section class="banner" id="">
@@ -55,28 +46,27 @@
       <section class="row">
          <div class="col-md-12 adj ">
             <div class="container font-a font-base text-center">
-            <img src="assets/img/dollarbag.png" width="50" class="img-responsive"/>
+               <img src="assets/img/dollarbag.png" width="50" class="img-responsive"/>
                <h5 style="color: #4482c6 !important;">With Privia Quality Network, your practice could have generated...</h5>
                <h6><strong>calculated result</strong></h6>
                <h6><span style="font-size:12px;"><em>more In earned savings per year.</em></span></h6>
                <p style="text-align: center;"><span style="font-size:12px;"><em>Note: This number does not include direct expenses for each patient or the 2 percent sequestration clawback.<br>This calculation is based on 2018 performance.</em></span></p>
-            </div>    
+            </div>
             <div  style="padding-top:0;padding-bottom:0;" class="row img-container">
-            <div class="col-md-3 img-container"></div>
-            <div class="col-md-3 img-container">
-               <div  class="img-container">
-                  <a href="http://localhost/Aco/home.php" id="" class="button btn-purple button-medium">Recalculate</a>
+               <div class="col-md-3 img-container"></div>
+               <div class="col-md-3 img-container">
+                  <div  class="img-container">
+                     <a href="http://localhost/Aco/home.php" id="" class="button btn-purple button-medium">Recalculate</a>
+                  </div>
+               </div>
+               <div class="col-md-3 img-container">
+                  <div  class="img-container">
+                     <a type="button" data-toggle="modal" data-target="#exampleModalCenter" class="button btn-primary button-medium white">Let's Talk</a>
+                  </div>
                </div>
             </div>
-            <div class="col-md-3 img-container">
-               <div  class="img-container">
-                  <a type="button" data-toggle="modal" data-target="#exampleModalCenter" class="button btn-primary button-medium white">Let's Talk</a>
-               </div>
-            </div>
-            </div> 
          </div>
       </section>
-      
       <section class="banner1">
          <div class="container">
             <div class="row">
@@ -101,83 +91,80 @@
             <p class="footer-adj2">©2020 Privia Health, LLC. All rights reserved. All products referenced in this material may be trademarks or registered trademarks of their respective companies.</p>
          </div>
       </div>
-
-
       <!-- Modal1 -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-    <div class="row modal-adj">
-      <div class="col-md-10">
-        <h3 class="modal-head" id="exampleModalLongTitle">Get in Touch With Us</h3>
-        </div>
-        <div class="col-md-2">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+               <div class="row modal-adj">
+                  <div class="col-md-10">
+                     <h3 class="modal-head" id="exampleModalLongTitle">Get in Touch With Us</h3>
+                  </div>
+                  <div class="col-md-2">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                     </button>
+                  </div>
+               </div>
+               <p class="text-center">Submit the form below and a member of our team will be in touch.</p>
+               <div class="container">
+                  <form action="http://localhost/healthcare/index.php/Welcome/savedata" method="post" class="was-validated">
+                     <div class="form-group">
+                        <input type="text" class="form-control" id="firstname" placeholder="Enter firstname" name="firstname" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                     </div>
+                     <div class="form-group">
+                        <input type="text" class="form-control" id="lastname" placeholder="Enter lastname" name="lastname" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                     </div>
+                     <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                     </div>
+                     <div class="form-group">
+                        <input type="text" class="form-control" id="jobtitle" placeholder="Enter jobtitle" name="jobtitle" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                     </div>
+                     <div class="form-group">
+                        <input type="text" class="form-control" id="carecentername" placeholder="Enter carecentername" name="carecentername" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                     </div>
+                     <div class="form-group">
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter phone" name="phone" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                     </div>
+                     <div class="form-group">
+                        <input type="text" class="form-control" id="zipcode" placeholder="Enter zipcode" name="zipcode" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                     </div>
+                     <div class="form-group">
+                        <textarea class="form-control" rows="5" id="yourmessage" name="yourmessage"></textarea>
+                     </div>
+                     <div class="btn-adj"><button type="submit" href="localhost/healthcare" class="btn btn-warning">SUBMIT</button></div>
+                  </form>
+               </div>
+            </div>
+         </div>
       </div>
+      <!-- model2 data-toggle="modal" data-target="mymodel" -->
+      <div class="modal" id="mymodel" tabindex="-1" role="dialog">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+               <div class="modal-body">
+                  <p>Thank You,For contacted us
+                     A representative will be in touch with you shortly to help you get started.
+                  </p>
+               </div>
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+         </div>
       </div>
-      <p class="text-center">Submit the form below and a member of our team will be in touch.</p>
-      <div class="container">
-      <form action="http://localhost/healthcare/index.php/Welcome/savedata" method="post" class="was-validated">
-  <div class="form-group">
-    <input type="text" class="form-control" id="firstname" placeholder="Enter firstname" name="firstname" required>
-    <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" id="lastname" placeholder="Enter lastname" name="lastname" required>
-    <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-  </div>
-  <div class="form-group">
-    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
-    <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" id="jobtitle" placeholder="Enter jobtitle" name="jobtitle" required>
-    <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" id="carecentername" placeholder="Enter carecentername" name="carecentername" required>
-    <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-  </div>
-  <div class="form-group">
-    <input type="tel" class="form-control" id="phone" placeholder="Enter phone" name="phone" required>
-    <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" id="zipcode" placeholder="Enter zipcode" name="zipcode" required>
-    <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-  </div>
-  <div class="form-group">
-  <textarea class="form-control" rows="5" id="yourmessage" name="yourmessage"></textarea>
-  </div>
-  <div class="btn-adj"><button type="submit" href="localhost/healthcare" class="btn btn-warning">SUBMIT</button></div>
-</form>
-</div>
-      </div>
-  </div>
-</div>
-
-<!-- model2 data-toggle="modal" data-target="mymodel" -->
-<div class="modal" id="mymodel" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-   
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <div class="modal-body">
-        <p>Thank You,For contacted us
-          A representative will be in touch with you shortly to help you get started.</p>
-      </div>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
