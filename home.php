@@ -84,28 +84,28 @@ $resultaco = $mysqli->query("SELECT carecentername	FROM existingaco");
 <div id="" style="padding-top:6px;" class="font-b color-h">
     <h6 style="text-align: center;">Do you participate in an<br>existing ACO?</h6>
     <select  class="dropdown1" name="participation" id="participation" required >
-    <option value="">select</option>
+    <option value="0">select</option>
     <option value="1">Yes</option>
-    <option value="0">No</option>
+    <option value="2">No</option>
     </select>
     </div>
     <div id="" style="padding-top:6px;" class="font-b color-h">
-    <select  class="dropdown1" name="participation" id="carecenter" required >
+    <select  class="dropdown1 hide" name="existingaco" id="carecenter" required >
+    <option value= "" selected disabled="disabled">Choose Existing Aco</option>
       <?php
             while ($rows = $resultaco->fetch_assoc())
             {
               $carecentername= $rows['carecentername'];
               echo "<option value=' $carecentername'> $carecentername</option>";
             }
-
-
-           ?>
+      ?>
+      </select>
     </div>
 </div>
 <div class="col-md-3" style="text-align: center;">
 <img src="assets/img/heartq.png" id="ball_i06dh5sdjDE2rFWitXF9A" width="165" class="image-c img-responsive" height="150" border="0">
 <div id="" style="padding-top:6px;" class="font-b color-h ">
-<h6 style="text-align: center;">How many traditional Medicare lives<br>are attributed to your practice?</h6>
+<h6 style="text-align: center;">How many traditional Medicare lives are attributed to your practice?</h6>
 <input class="dropdown1" type="number" id="traditionalMedicare" name="number">
 </div>
 </div>
@@ -214,3 +214,16 @@ $resultaco = $mysqli->query("SELECT carecentername	FROM existingaco");
       </div>
     </div>
   </div>
+<script>
+var $participation = $("select[name='participation']");
+    var $existingaco = $("select[name='existingaco']");
+    
+    $participation.change(function() {
+        var selectedItem = $(this).val();
+        if (selectedItem == 1) {
+            $existingaco.show();
+        }else{
+        $existingaco.hide();
+        }
+    });
+</script>
