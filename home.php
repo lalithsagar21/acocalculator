@@ -1,4 +1,8 @@
-<?php //print_r($data);die; ?>
+<?php 
+include 'db.php';
+$resultreg = $mysqli->query("SELECT statename FROM state_region");
+$resultaco = $mysqli->query("SELECT carecentername	FROM existingaco");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,16 +61,25 @@
         <section class="container">
           <form method="post" action="">
         <div class="row">
-            <div class="col-md-4" style="text-align: center;">
+            <div class="col-md-3" style="text-align: center;">
             <img src="assets/img/US_logo.png" id="ball_i06dh5sdjDE2rFWitXF9A" width="225" class="image-c img-responsive" height="150" border="0">
             <div id="" style="padding-top:6px;" class="font-b color-h">
             <h6 style="text-align: center;">What state or region<br>do you live in?</h6>
             <select class="dropdown1" name="region" id="region">
-              <option value="<?php echo $value;?>">Choose the region</option>
+            <option value= "" selected disabled="disabled">Select</option>
+            <?php
+            while ($rows = $resultreg->fetch_assoc())
+            {
+              $statename= $rows['statename'];
+              echo "<option value='$statename'>$statename</option>";
+            }
+
+
+           ?>
             </select>
                 </div>
             </div>
-<div class="col-md-4" style="text-align: center;">
+<div class="col-md-6" style="text-align: center;">
 <img src="assets/img/calendar1.png" id="ball_i06dh5sdjDE2rFWitXF9A" width="165" class="image-c img-responsive" height="150" border="0">
 <div id="" style="padding-top:6px;" class="font-b color-h">
     <h6 style="text-align: center;">Do you participate in an<br>existing ACO?</h6>
@@ -78,12 +91,18 @@
     </div>
     <div id="" style="padding-top:6px;" class="font-b color-h">
     <select  class="dropdown1" name="participation" id="carecenter" required >
-    <option value="">Choose Existing Aco</option>
-    <option value="">carecenter</option>
-    </select>
+      <?php
+            while ($rows = $resultaco->fetch_assoc())
+            {
+              $carecentername= $rows['carecentername'];
+              echo "<option value=' $carecentername'> $carecentername</option>";
+            }
+
+
+           ?>
     </div>
 </div>
-<div class="col-md-4" style="text-align: center;">
+<div class="col-md-3" style="text-align: center;">
 <img src="assets/img/heartq.png" id="ball_i06dh5sdjDE2rFWitXF9A" width="165" class="image-c img-responsive" height="150" border="0">
 <div id="" style="padding-top:6px;" class="font-b color-h ">
 <h6 style="text-align: center;">How many traditional Medicare lives<br>are attributed to your practice?</h6>
