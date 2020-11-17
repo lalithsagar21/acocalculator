@@ -1,4 +1,33 @@
-<?php //print_r($data);die; ?>
+<?php 
+$choicevalue = $statevalue = $result = $number = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["choicevalue"])) {
+    $statename = test_input($_POST["choicevalue"]);
+  } 
+  if (empty($_POST["statevalue"])) {
+    $statevalue = test_input($_POST["statevalue "]);
+  } 
+
+
+  if (empty($_POST["number"])) {
+    $number = "";
+  } else {
+    $number = test_input($_POST["number"]);
+  }
+
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+} 
+  if (is_numeric($statevalue) && is_numeric($number)) {
+   $result = ($statevalue * $number); 
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -48,7 +77,7 @@
             <div class="container font-a font-base text-center">
                <img src="assets/img/dollarbag.png" width="50" class="img-responsive"/>
                <h5 style="color: #4482c6 !important;">With Privia Quality Network, your practice could have generated...</h5>
-               <h6><strong>calculated result</strong></h6>
+               <h6><strong><?php echo  $result; ?></strong></h6>
                <h6><span style="font-size:12px;"><em>more In earned savings per year.</em></span></h6>
                <p style="text-align: center;"><span style="font-size:12px;"><em>Note: This number does not include direct expenses for each patient or the 2 percent sequestration clawback.<br>This calculation is based on 2018 performance.</em></span></p>
             </div>

@@ -1,7 +1,8 @@
 <?php 
 include 'db.php';
-$resultreg = $mysqli->query("SELECT statename FROM state_region");
-$resultaco = $mysqli->query("SELECT carecentername	FROM existingaco");
+$resultreg = $mysqli->query("SELECT statename,statevalue FROM state_region");
+$resultaco = $mysqli->query("SELECT carecentername,choicevalue	FROM existingaco");
+
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +60,7 @@ $resultaco = $mysqli->query("SELECT carecentername	FROM existingaco");
         </div>
         </section>
         <section class="container">
-          <form method="post" action="">
+          <form method="post" action="result2.php">
         <div class="row">
             <div class="col-md-3" style="text-align: center;">
             <img src="assets/img/US_logo.png" id="ball_i06dh5sdjDE2rFWitXF9A" width="225" class="image-c img-responsive" height="150" border="0">
@@ -71,7 +72,8 @@ $resultaco = $mysqli->query("SELECT carecentername	FROM existingaco");
             while ($rows = $resultreg->fetch_assoc())
             {
               $statename= $rows['statename'];
-              echo "<option value='$statename'>$statename</option>";
+              $statevalue= $rows['statevalue'];
+              echo "<option value='$statevalue'>$statename</option>";
             }
 
 
@@ -90,31 +92,33 @@ $resultaco = $mysqli->query("SELECT carecentername	FROM existingaco");
     </select>
     </div>
     <div id="" style="padding-top:6px;" class="font-b color-h">
-    <select  class="dropdown1 hide" name="existingaco" id="carecenter" required >
+    <select  class="dropdown1 hide" name="existingaco" id="carecenter" >
     <option value= "" selected disabled="disabled">Choose Existing Aco</option>
       <?php
             while ($rows = $resultaco->fetch_assoc())
             {
               $carecentername= $rows['carecentername'];
-              echo "<option value=' $carecentername'> $carecentername</option>";
+              $choicevalue = $rows['choicevalue'];
+              echo "<option value=' $choicevalue'> $carecentername</option>";
             }
       ?>
       </select>
     </div>
 </div>
 <div class="col-md-3" style="text-align: center;">
-<img src="assets/img/heartq.png" id="ball_i06dh5sdjDE2rFWitXF9A" width="165" class="image-c img-responsive" height="150" border="0">
+<img src="assets/img/heartq.png" id="" width="165" class="image-c img-responsive" height="150" border="0">
 <div id="" style="padding-top:6px;" class="font-b color-h ">
 <h6 style="text-align: center;">How many traditional Medicare lives are attributed to your practice?</h6>
-<input class="dropdown1" type="number" id="traditionalMedicare" name="number">
+<input class="dropdown1" type="number" id="traditionalMedicare" name="number" value="<?php echo $number;?>" required>
 </div>
 </div>
 </div>
 <div class="col-md-12 bt-adj">
 <input type="submit" value="CALCULATE THE BENEFITS" class="button-c" /> 
 </div>
+</form>
 <p style="margin-bottom: auto;" class="text-center">Don't see your market listed?</p>
-<p class="text-center"><a href="">Reach out to a representative</a></p>
+<p class="text-center"><a href="" data-toggle="modal" data-target="#exampleModalCenter">Reach out to a representative</a></p>
 </section>
 <section class="banner1">
     <div class="container">
