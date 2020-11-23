@@ -1,4 +1,7 @@
-<?php //print_r($data);die; ?>
+<?php 
+session_start();
+$result2 = number_format($_SESSION["result2"]);
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -37,7 +40,7 @@
       </nav>
       <section class="banner" id="">
          <div class="container banner-text">
-            <h2 class="bt-a">HOW MUCH SHARED SAVINGS COULD YOU EXPECT AS PART OF PRIVIA QUALITY NETWORK?</h2>
+            <h2 class="bt-a">HOW MUCH CAN PRIVIA QUALITY NETWORK HELP YOU SAVE?</h2>
          </div>
          <div  style="margin-bottom:-62px;width:50px;max-width:none;height:50px;display:inline-block;" class="img-circle background-i img-container">
             <img src="assets/img/downarrow.png"  width="30" class="img-fluid img-responsive" height="45" border="0">
@@ -48,7 +51,7 @@
             <div class="container font-a font-base text-center">
                <img src="assets/img/dollarbag.png" width="50" class="img-responsive"/>
                <h5 style="color: #4482c6 !important;">With Privia Quality Network, your practice could have generated...</h5>
-               <h6><strong>calculated result</strong></h6>
+               <h2> $<?php echo $result2; ?></h2>
                <h6><span style="font-size:12px;"><em>more In earned savings per year.</em></span></h6>
                <p style="text-align: center;"><span style="font-size:12px;"><em>Note: This number does not include direct expenses for each patient or the 2 percent sequestration clawback.<br>This calculation is based on 2018 performance.</em></span></p>
             </div>
@@ -56,7 +59,7 @@
                <div class="col-md-3 img-container"></div>
                <div class="col-md-3 img-container">
                   <div  class="img-container">
-                     <a href="http://localhost/Aco/home.php" id="" class="button btn-purple button-medium">Recalculate</a>
+                     <a href="/index.php" id="" class="button btn-purple button-medium">Recalculate</a>
                   </div>
                </div>
                <div class="col-md-3 img-container">
