@@ -1,4 +1,8 @@
-<?php //print_r($data);die; ?>
+<?php 
+session_start();
+$result1 = number_format($_SESSION["result1"]);
+$num = $result1;
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -96,7 +100,7 @@
             <div class="container font-a font-base text-center">
                <img src="assets/img/dollarbag.png" width="50" class="img-responsive"/>
                <h5 style="color: #4482c6 !important;">With Privia Quality Network, your practice could have generated...</h5>
-               <h6><strong>calculated result</strong></h6>
+               <h2>$<?php echo $num; ?></h2>
                <h6><span style="font-size:12px;"><em>more In earned savings per year.</em></span></h6>
                <p style="text-align: center;"><span style="font-size:12px;"><em>Note: This number does not include direct expenses for each patient or the 2 percent sequestration clawback.<br>This calculation is based on 2018 performance.</em></span></p>
             </div>
@@ -104,7 +108,7 @@
                <div class="col-md-3 img-container"></div>
                <div class="col-md-3 img-container">
                   <div  class="img-container">
-                     <a href="http://localhost/Aco/home.php" id="" class="button btn-purple button-medium">Recalculate</a>
+                     <a href="http://localhost/aco" id="" class="button btn-purple button-medium">Recalculate</a>
                   </div>
                </div>
                <div class="col-md-3 img-container">

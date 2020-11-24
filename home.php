@@ -1,18 +1,7 @@
 <?php 
 include 'db.php';
 $resultreg = $mysqli->query("SELECT * FROM state_region");
-$resultaco = $mysqli->query("SELECT carecentername,choicevalue	FROM existingaco");
-
-$statevalue = $choicevalue = $number = $result2 = $result1 = "";
-session_start();
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   $statevalue = $_POST["statevalue"];
-   $choicevalue = $_POST["statevalue"];
-   $number = $_POST["number"];
-  }
-
-
- 
+$resultaco = $mysqli->query("SELECT * FROM existingaco");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,21 +59,26 @@ session_start();
         </div>
         </section>
         <section class="container">
-          <form method="post" action="">
+          <form method="post" action="calc.php">
         <div class="row">
             <div class="col-md-3" style="text-align: center;">
             <img src="assets/img/US_logo.png" id="ball_i06dh5sdjDE2rFWitXF9A" width="225" class="image-c img-responsive" height="150" border="0">
             <div id="" style="padding-top:6px;" class="font-b color-h">
             <h6 style="text-align: center;">What state or region<br>do you live in?</h6>
             <select class="dropdown1" name="region" id="region">
-            <option selected disabled="disabled">Choose State</option>
-            <?php
+     <option selected disabled="disabled">Choose State</option>
+
+
+         <?php
             while ($rows = $resultreg->fetch_assoc())
             {
-              $statename = $rows['statename'];
-              echo "<option value=""> $statename</option>";
+              $statename= $rows['statename'];
+              $statevalue= $rows['statevalue'];
+              echo "<option value=' $statevalue'> $statename</option>";
             }
       ?>
+      </select>
+
             </select>
             
                 </div>
@@ -93,14 +87,14 @@ session_start();
 <img src="assets/img/calendar1.png" id="ball_i06dh5sdjDE2rFWitXF9A" width="165" class="image-c img-responsive" height="150" border="0">
 <div id="" style="padding-top:6px;" class="font-b color-h">
     <h6 style="text-align: center;">Do you participate in an<br>existing ACO?</h6>
-    <select  class="dropdown1" name="participation" id="participation" required >
-    <option value="0">select</option>
+    <select  class="dropdown1" name="parti" id="participation" required >
+  <option value= "" selected disabled="disabled">select</option>
     <option value="1">Yes</option>
     <option value="2">No</option>
     </select>
     </div>
     <div id="" style="padding-top:6px;" class="font-b color-h">
-    <select  class="dropdown1 hide" name="existingaco" id="carecenter" >
+    <select  class="dropdown1 hide" name="choicevalue" id="carecenter" >
     <option value= "" selected disabled="disabled">Choose Existing Aco</option>
       <?php
             while ($rows = $resultaco->fetch_assoc())
@@ -122,14 +116,9 @@ session_start();
 </div>
 </div>
 <div class="col-md-12 bt-adj">
-<input type="submit" value="CALCULATE THE BENEFITS" class="button-c" /> 
+<input type="submit" value="CALCULATE THE BENEFITS" class="button-c" name="submitted"/> 
 </div>
 </form>
-<?php 
-echo "<br>";
-print $statevalue;
-print $number;
-?>
 <p style="margin-bottom: auto;" class="text-center">Don't see your market listed?</p>
 <p class="text-center"><a href="" data-toggle="modal" data-target="#exampleModalCenter">Reach out to a representative</a></p>
 </section>
@@ -169,7 +158,7 @@ print $number;
       </div>
       <p class="text-center">Submit the form below and a member of our team will be in touch.</p>
       <div class="container">
-      <form action="http://localhost/healthcare/index.php/Welcome/savedata" method="post" class="was-validated">
+      <form action="insert.php" method="post" class="was-validated">
   <div class="form-group">
     <input type="text" class="form-control" id="firstname" placeholder="Enter firstname" name="firstname" required>
     <div class="valid-feedback">Valid.</div>
@@ -208,8 +197,9 @@ print $number;
   <div class="form-group">
   <textarea class="form-control" rows="5" id="yourmessage" name="yourmessage"></textarea>
   </div>
-  <div class="btn-adj"><button type="submit" href="localhost/healthcare" class="btn btn-warning">SUBMIT</button></div>
+  <div class="btn-adj"><button type="submit" href="http://localhost/aco" class="btn btn-warning" name="submit">SUBMIT</button></div>
 </form>
+<?php //echo "record inserted successfuly" ;?>
 </div>
       </div>
   </div>
@@ -232,15 +222,26 @@ print $number;
     </div>
   </div>
 <script>
-var $participation = $("select[name='participation']");
-    var $existingaco = $("select[name='existingaco']");
-    
+var $participation = $("select[name='parti']");
+    var $existingaco = $("select[name='choicevalue']");
+    $existingaco.hide();
     $participation.change(function() {
         var selectedItem = $(this).val();
-        if (selectedItem == 1) {
-            $existingaco.show();
+        if (selectedItem == 2) {
+            $existingaco.hide();
         }else{
-        $existingaco.hide();
+        $existingaco.show();
+        var statename = obj.options[obj.selectedIndex].$statename;
+            var carecentername = document.querySelectorAll('#carecenter option');
+            for (var i = 1; i < carecentername.length; i++) {
+                var option = carecentername[i];
+                option.style.display = 'none';
+                if (statename == '<?php echo $statename; ?>') {
+                    if (carecentername.indexOf(option.statename) > -1)
+                        option.style.display = 'block'
+
+                }
+            }
         }
     });
 </script>
