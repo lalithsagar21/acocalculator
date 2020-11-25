@@ -1,7 +1,7 @@
 <?php 
 include 'db.php';
 $resultreg = $mysqli->query("SELECT * FROM state_region");
-$resultaco = $mysqli->query("SELECT carecentername,choicevalue	FROM existingaco");
+$resultaco = $mysqli->query("SELECT state_region.statename, existingaco.ccvalue, existingaco.carecentername, existingaco.choicevalue FROM state_region INNER JOIN existingaco ON state_region.statevalue = existingaco.ccvalue");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,19 +65,17 @@ $resultaco = $mysqli->query("SELECT carecentername,choicevalue	FROM existingaco"
             <img src="assets/img/US_logo.png" id="ball_i06dh5sdjDE2rFWitXF9A" width="225" class="image-c img-responsive" height="150" border="0">
             <div id="" style="padding-top:6px;" class="font-b color-h">
             <h6 style="text-align: center;">What state or region<br>do you live in?</h6>
-            <select class="dropdown1" name="region" id="region">
-     <option selected disabled="disabled">Choose State</option>
-
-
-         <?php
+   <select id="groups" class="dropdown1" name="region" >
+     <option value= "" selected disabled="disabled">Select</option>
+    <?php
             while ($rows = $resultreg->fetch_assoc())
             {
               $statename= $rows['statename'];
               $statevalue= $rows['statevalue'];
-              echo "<option value=' $statevalue'> $statename</option>";
+              echo "<option value='$statename'> $statename</option>";
             }
       ?>
-      </select>
+</select>
 
             </select>
             
@@ -94,17 +92,19 @@ $resultaco = $mysqli->query("SELECT carecentername,choicevalue	FROM existingaco"
     </select>
     </div>
     <div id="" style="padding-top:6px;" class="font-b color-h">
-    <select  class="dropdown1 hide" name="choicevalue" id="carecenter" >
-    <option value= "" selected disabled="disabled">Choose Existing Aco</option>
-      <?php
+   <select id="sub_groups" class="dropdown1 hide" name="choicevalue" >
+	<option value= "" selected disabled="disabled">Choose Existing Aco</option>
+   <?php
             while ($rows = $resultaco->fetch_assoc())
             {
               $carecentername= $rows['carecentername'];
               $choicevalue = $rows['choicevalue'];
-              echo "<option value=' $choicevalue'> $carecentername</option>";
+              $statename = $rows['statename'];
+             
+              echo "<option value=' $choicevalue' data-group='$statename'> $carecentername</option>";
             }
       ?>
-      </select>
+</select>
     </div>
 </div>
 <div class="col-md-3" style="text-align: center;">
@@ -221,15 +221,42 @@ $resultaco = $mysqli->query("SELECT carecentername,choicevalue	FROM existingaco"
     </div>
   </div>
 <script>
-var $participation = $("select[name='parti']");
-    var $existingaco = $("select[name='choicevalue']");
-    
+$(function(){
+    $('#groups').on('change', function(){
+        var val = $(this).val();
+        var sub = $('#sub_groups');
+        $('option', sub).filter(function(){
+            if (
+                 $(this).attr('data-group') === val 
+              || $(this).attr('data-group') === 'SHOW'
+            ) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
+    $('#groups').trigger('change');
+});
+</script>
+
+<script>
+var $participation = $('#participation');
+    var $existingaco = $('#sub_groups');
+    $('#sub_groups').hide();
     $participation.change(function() {
         var selectedItem = $(this).val();
-        if (selectedItem == 1) {
-            $existingaco.show();
-        }else{
-        $existingaco.hide();
+        if (selectedItem == 2) {
+            $existingaco.hide();
+        }
+      
+        else{
+        $existingaco.show();
         }
     });
+
+    
 </script>
+
+</body>
+</html>
