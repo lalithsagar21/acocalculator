@@ -1,7 +1,8 @@
+
 <?php 
 include 'db.php';
 $resultreg = $mysqli->query("SELECT * FROM state_region");
-$resultaco = $mysqli->query("SELECT * FROM existingaco");
+$resultaco = $mysqli->query("SELECT state_region.statename, existingaco.statevalue, existingaco.carecentername, existingaco.choicevalue FROM state_region INNER JOIN existingaco ON state_region.statevalue = existingaco.statevalue");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,19 +66,17 @@ $resultaco = $mysqli->query("SELECT * FROM existingaco");
             <img src="assets/img/US_logo.png" id="ball_i06dh5sdjDE2rFWitXF9A" width="225" class="image-c img-responsive" height="150" border="0">
             <div id="" style="padding-top:6px;" class="font-b color-h">
             <h6 style="text-align: center;">What state or region<br>do you live in?</h6>
-            <select class="dropdown1" name="region" id="region">
-     <option selected disabled="disabled">Choose State</option>
-
-
-         <?php
+   <select id="groups" class="dropdown1" name="region" >
+     <option value= "" selected disabled="disabled">Select</option>
+    <?php
             while ($rows = $resultreg->fetch_assoc())
             {
               $statename= $rows['statename'];
               $statevalue= $rows['statevalue'];
-              echo "<option value=' $statevalue'> $statename</option>";
+              echo "<option value='$statename'> $statename</option>";
             }
       ?>
-      </select>
+</select>
 
             </select>
             
@@ -94,17 +93,19 @@ $resultaco = $mysqli->query("SELECT * FROM existingaco");
     </select>
     </div>
     <div id="" style="padding-top:6px;" class="font-b color-h">
-    <select  class="dropdown1 hide" name="choicevalue" id="carecenter" >
-    <option value= "" selected disabled="disabled">Choose Existing Aco</option>
-      <?php
+   <select id="sub_groups" class="dropdown1 hide" name="choicevalue" >
+	<option value= "" selected disabled="disabled">Choose Existing Aco</option>
+   <?php
             while ($rows = $resultaco->fetch_assoc())
             {
               $carecentername= $rows['carecentername'];
               $choicevalue = $rows['choicevalue'];
-              echo "<option value=' $choicevalue'> $carecentername</option>";
+              $statename = $rows['statename'];
+             
+              echo "<option value=' $choicevalue' data-group='$statename'> $carecentername</option>";
             }
       ?>
-      </select>
+</select>
     </div>
 </div>
 <div class="col-md-3" style="text-align: center;">
@@ -158,7 +159,7 @@ $resultaco = $mysqli->query("SELECT * FROM existingaco");
       </div>
       <p class="text-center">Submit the form below and a member of our team will be in touch.</p>
       <div class="container">
-      <form action="insert.php" method="post" class="was-validated">
+      <form action="http://localhost/healthcare/index.php/Welcome/savedata" method="post" class="was-validated">
   <div class="form-group">
     <input type="text" class="form-control" id="firstname" placeholder="Enter firstname" name="firstname" required>
     <div class="valid-feedback">Valid.</div>
@@ -197,9 +198,8 @@ $resultaco = $mysqli->query("SELECT * FROM existingaco");
   <div class="form-group">
   <textarea class="form-control" rows="5" id="yourmessage" name="yourmessage"></textarea>
   </div>
-  <div class="btn-adj"><button type="submit" href="http://localhost/aco" class="btn btn-warning" name="submit">SUBMIT</button></div>
+  <div class="btn-adj"><button type="submit" href="localhost/healthcare" class="btn btn-warning">SUBMIT</button></div>
 </form>
-<?php //echo "record inserted successfuly" ;?>
 </div>
       </div>
   </div>
@@ -222,26 +222,42 @@ $resultaco = $mysqli->query("SELECT * FROM existingaco");
     </div>
   </div>
 <script>
-var $participation = $("select[name='parti']");
-    var $existingaco = $("select[name='choicevalue']");
-    $existingaco.hide();
+$(function(){
+    $('#groups').on('change', function(){
+        var val = $(this).val();
+        var sub = $('#sub_groups');
+        $('option', sub).filter(function(){
+            if (
+                 $(this).attr('data-group') === val 
+              || $(this).attr('data-group') === 'SHOW'
+            ) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
+    $('#groups').trigger('change');
+});
+</script>
+
+<script>
+var $participation = $('#participation');
+    var $existingaco = $('#sub_groups');
+    $('#sub_groups').hide();
     $participation.change(function() {
         var selectedItem = $(this).val();
         if (selectedItem == 2) {
             $existingaco.hide();
-        }else{
+        }
+      
+        else{
         $existingaco.show();
-        var statename = obj.options[obj.selectedIndex].$statename;
-            var carecentername = document.querySelectorAll('#carecenter option');
-            for (var i = 1; i < carecentername.length; i++) {
-                var option = carecentername[i];
-                option.style.display = 'none';
-                if (statename == '<?php echo $statename; ?>') {
-                    if (carecentername.indexOf(option.statename) > -1)
-                        option.style.display = 'block'
-
-                }
-            }
         }
     });
+
+    
 </script>
+
+</body>
+</html>
