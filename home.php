@@ -92,7 +92,7 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.ccvalue,
     </select>
     </div>
     <div id="" style="padding-top:6px;" class="font-b color-h">
-   <select id="sub_groups" class="dropdown1 hide" name="choicevalue" >
+   <select id="sub_groups" class="dropdown1 hide" name="choicevalue">
 	<option value= "" selected disabled="disabled">Choose Existing Aco</option>
    <?php
             while ($rows = $resultaco->fetch_assoc())
