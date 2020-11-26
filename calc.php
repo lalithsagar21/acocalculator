@@ -27,7 +27,8 @@ if ($result->num_rows > 0) {
      //echo  $row["statevalue"]. "<br>";
      $result2 = $statevalue*$number;
      // echo $result2 . "<br>";
-     $_SESSION["result2"] = " $result2";
+     $_SESSION["result2"] = "$result2";
+   
      if(isset($_SESSION['result2']))
      {
          header("Location: result2.php");
@@ -50,6 +51,7 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     $statevalue = $row["statevalue"];
      $result1 = (($statevalue * $number)-($choicevalue * $number));
+     $_SESSION["statevalue"] = "$statevalue";
      $_SESSION["result1"] = " $result1";
      if(isset($_SESSION['result1']))
      {

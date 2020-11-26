@@ -1,4 +1,3 @@
-
 <?php 
 include 'db.php';
 $resultreg = $mysqli->query("SELECT * FROM state_region");
@@ -30,7 +29,7 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.stateval
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top xs-center" id="mainNav">
             <div class="container">
               <ul class="nav navbar-nav navbar-left">
                 <li><a class="navbar-brand js-scroll-trigger" href=""><img class="logo" src="./assets/img/privia.png" alt="" /></a></li>
@@ -53,7 +52,7 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.stateval
             <div id="" class="font-a font-base color-h">
                 <h2 style="text-align: center;">
                 <strong>Pathways to Success Savings Calculator</strong></h2>
-                <p style="text-align: center;font-size: 23px;margin: 0px 9em;">
+                <p class="pws">
                 Are you or your accountable care organization (ACO) considering Pathways to Success?
                 Fill out the fields below to see how much Privia Quality Network (PQN)
                 can help you save per patient.</p></div>
@@ -62,10 +61,10 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.stateval
         <section class="container">
           <form method="post" action="calc.php">
         <div class="row">
-            <div class="col-md-3" style="text-align: center;">
-            <img src="assets/img/US_logo.png" id="ball_i06dh5sdjDE2rFWitXF9A" width="225" class="image-c img-responsive" height="150" border="0">
+            <div class="col-md-4 text-center">
+            <img src="assets/img/US_logo.png" class="image-c img-responsive imgus"  border="0">
             <div id="" style="padding-top:6px;" class="font-b color-h">
-            <h6 style="text-align: center;">What state or region<br>do you live in?</h6>
+            <h6>What state or region do you live in?</h6>
    <select id="groups" class="dropdown1" name="region" >
      <option value= "" selected disabled="disabled">Select</option>
     <?php
@@ -82,10 +81,10 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.stateval
             
                 </div>
             </div>
-<div class="col-md-6" style="text-align: center;">
-<img src="assets/img/calendar1.png" id="ball_i06dh5sdjDE2rFWitXF9A" width="165" class="image-c img-responsive" height="150" border="0">
+<div class="col-md-4 text-center">
+<img src="assets/img/calendar1.png"  class="image-c img-responsive imgadj" border="0">
 <div id="" style="padding-top:6px;" class="font-b color-h">
-    <h6 style="text-align: center;">Do you participate in an<br>existing ACO?</h6>
+    <h6>Do you participate in an <br>existing ACO?</h6>
     <select  class="dropdown1" name="parti" id="participation" required >
   <option value= "" selected disabled="disabled">select</option>
     <option value="1">Yes</option>
@@ -93,7 +92,7 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.stateval
     </select>
     </div>
     <div id="" style="padding-top:6px;" class="font-b color-h">
-   <select id="sub_groups" class="dropdown1 hide" name="choicevalue" >
+   <select id="sub_groups" class="dropdown1 hide ddw" name="choicevalue">
 	<option value= "" selected disabled="disabled">Choose Existing Aco</option>
    <?php
             while ($rows = $resultaco->fetch_assoc())
@@ -108,11 +107,11 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.stateval
 </select>
     </div>
 </div>
-<div class="col-md-3" style="text-align: center;">
-<img src="assets/img/heartq.png" id="" width="165" class="image-c img-responsive" height="150" border="0">
+<div class="col-md-4 text-center">
+<img src="assets/img/heartq1.png" id=""   class="image-c img-responsive imgadj"  border="0">
 <div id="" style="padding-top:6px;" class="font-b color-h ">
-<h6 style="text-align: center;">How many traditional Medicare lives are attributed to your practice?</h6>
-<input class="dropdown1" type="number" id="traditionalMedicare" name="number" value="<?php echo $number;?>" required>
+<h6>How many traditional Medicare lives are attributed to your practice?</h6>
+<input class="dropdown1 ddw" type="number" id="traditionalMedicare" name="number" value="<?php echo $number;?>" required>
 </div>
 </div>
 </div>

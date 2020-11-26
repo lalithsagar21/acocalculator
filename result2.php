@@ -28,7 +28,7 @@ $result2 = number_format($_SESSION["result2"]);
    </head>
    <body id="page-top">
       <!-- Navigation-->
-      <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+      <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top xs-center" id="mainNav">
          <div class="container">
             <ul class="nav navbar-nav navbar-left">
                <li><a class="navbar-brand js-scroll-trigger" href=""><img class="logo" src="./assets/img/privia.png" alt="" /></a></li>
@@ -55,18 +55,16 @@ $result2 = number_format($_SESSION["result2"]);
                <h6><span style="font-size:12px;"><em>more In earned savings per year.</em></span></h6>
                <p style="text-align: center;"><span style="font-size:12px;"><em>Note: This number does not include direct expenses for each patient or the 2 percent sequestration clawback.<br>This calculation is based on 2018 performance.</em></span></p>
             </div>
-            <div  style="padding-top:0;padding-bottom:0;" class="row img-container">
-               <div class="col-md-3 img-container"></div>
-               <div class="col-md-3 img-container">
-                  <div  class="img-container">
-                     <a href="http://localhost/aco" id="" class="button btn-purple button-medium">Recalculate</a>
-                  </div>
+            <div  style="padding-top:0;padding-bottom:0;" class="row">
+               <div class="col-md-2"></div>
+               <div class="col-md-4">
+                  <a href="http://localhost/aco" id="" class="button btn-purple button-medium">Recalculate</a>
                </div>
-               <div class="col-md-3 img-container">
-                  <div  class="img-container">
+               &nbsp;
+               <div class="col-md-4">
                      <a type="button" data-toggle="modal" data-target="#exampleModalCenter" class="button btn-primary button-medium white">Let's Talk</a>
                   </div>
-               </div>
+               <div class="col-md-2"></div>
             </div>
          </div>
       </section>

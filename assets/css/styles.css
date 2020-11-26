@@ -10285,3 +10285,73 @@ h3 {
   color:#FFFFFF !important;
   font-size: 20px !important;
 }
+.pws{
+  text-align: center;font-size: 23px;margin: 0px 9em;
+}
+.imgadj{
+  width:165px;
+  height:150px;
+}
+.imgus{
+  width:100%;
+  height:auto;
+}
+@media only screen and (max-width: 767px) {
+  .bt-a {
+    padding: 0 0 0 0;
+    font-family: 'Proxima Nova', Helvetica, Helvetica Neue, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 19px !important;
+    margin-top: 50px !important;
+    margin-bottom: -20px !important;
+}
+.pws{
+    text-align: center;
+    font-size: 15px !important;
+    margin: 5px !important;
+}
+.font-adj {
+    color: white;
+    font-family: 'Proxima Nova', Helvetica, Helvetica Neue, Arial, sans-serif;
+    font-size: larger !important;
+}
+.font-para {
+    color: white;
+    font-weight: 300;
+    font-family: 'Proxima Nova', Helvetica, Helvetica Neue, Arial, sans-serif;
+    text-align: justify;
+    line-height: inherit;
+    font-size: small !important;
+}
+.ddw{
+  width: 80%;
+}
+h2, .h2 {
+  font-size: 1.5rem !important;
+}
+.imgadj, .imgus{
+  width:165px;
+  height:150px;
+}
+.xs-center{
+  text-align: center !important;
+}
+}
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+
+  .ddw{
+    width: 80%;
+  }
+  .bt-a {
+    padding: 0 1em !important;
+}
+.pws {
+  text-align: center;
+  font-size: 20px !important;
+  margin: 0px 1em !important;
+}
+.imgadj, .imgus{
+  width:165px;
+  height:150px;
+}
+}
