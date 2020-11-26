@@ -39,7 +39,7 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.stateval
               </ul>
             </div>
         </nav>
-        <section class="banner" id="">
+        <section class="banner">
          <div class="container banner-text">
             <h2 class="bt-a">HOW MUCH SHARED SAVINGS COULD YOU EXPECT AS PART OF PRIVIA QUALITY NETWORK?</h2>
          </div>
@@ -49,7 +49,7 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.stateval
       </section>
         <section class="row">
             <div class="col-md-12 adj">
-            <div id="" class="font-a font-base color-h">
+            <div  class="font-a font-base color-h">
                 <h2 style="text-align: center;">
                 <strong>Pathways to Success Savings Calculator</strong></h2>
                 <p class="pws">
@@ -62,9 +62,9 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.stateval
           <form method="post" action="calc.php">
         <div class="row">
             <div class="col-md-4 text-center">
-            <img src="assets/img/US_logo.png" class="image-c img-responsive imgus"  border="0">
+            <img src="assets/img/US_logo.png" class="img-responsive"  border="0">
             <div id="" style="padding-top:6px;" class="font-b color-h">
-            <h6>What state or region do you live in?</h6>
+            <h6>What state or region<br>do you live in?</h6>
    <select id="groups" class="dropdown1" name="region" >
      <option value= "" selected disabled="disabled">Select</option>
     <?php
@@ -82,8 +82,8 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.stateval
                 </div>
             </div>
 <div class="col-md-4 text-center">
-<img src="assets/img/calendar1.png"  class="image-c img-responsive imgadj" border="0">
-<div id="" style="padding-top:6px;" class="font-b color-h">
+<img src="assets/img/calendar1.png"  class="img-responsive" border="0">
+<div  style="padding-top:6px;" class="font-b color-h">
     <h6>Do you participate in an <br>existing ACO?</h6>
     <select  class="dropdown1" name="parti" id="participation" required >
   <option value= "" selected disabled="disabled">select</option>
@@ -91,7 +91,7 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.stateval
     <option value="2">No</option>
     </select>
     </div>
-    <div id="" style="padding-top:6px;" class="font-b color-h">
+    <div  style="padding-top:6px;" class="font-b color-h">
    <select id="sub_groups" class="dropdown1 hide ddw" name="choicevalue">
 	<option value= "" selected disabled="disabled">Choose Existing Aco</option>
    <?php
@@ -108,10 +108,10 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.stateval
     </div>
 </div>
 <div class="col-md-4 text-center">
-<img src="assets/img/heartq1.png" id=""   class="image-c img-responsive imgadj"  border="0">
+<img src="assets/img/heartq1.png"   class="img-responsive imgadj"  border="0">
 <div id="" style="padding-top:6px;" class="font-b color-h ">
 <h6>How many traditional Medicare lives are attributed to your practice?</h6>
-<input class="dropdown1 ddw" type="number" id="traditionalMedicare" name="number" value="<?php echo $number;?>" required>
+<input class="dropdown1" type="number" id="traditionalMedicare" name="number" value="<?php echo $number;?>" required>
 </div>
 </div>
 </div>

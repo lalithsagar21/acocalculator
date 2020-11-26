@@ -10293,8 +10293,11 @@ h3 {
   height:150px;
 }
 .imgus{
-  width:100%;
-  height:auto;
+  width: 225px;
+  height: 150px;
+}
+.ddw{
+  width: 100%;
 }
 @media only screen and (max-width: 767px) {
   .bt-a {
@@ -10323,13 +10326,10 @@ h3 {
     line-height: inherit;
     font-size: small !important;
 }
-.ddw{
-  width: 80%;
-}
 h2, .h2 {
   font-size: 1.5rem !important;
 }
-.imgadj, .imgus{
+.imgadj{
   width:165px;
   height:150px;
 }
@@ -10338,10 +10338,6 @@ h2, .h2 {
 }
 }
 @media only screen and (min-width: 768px) and (max-width: 990px) {
-
-  .ddw{
-    width: 80%;
-  }
   .bt-a {
     padding: 0 1em !important;
 }
@@ -10350,8 +10346,11 @@ h2, .h2 {
   font-size: 20px !important;
   margin: 0px 1em !important;
 }
-.imgadj, .imgus{
+.imgadj{
   width:165px;
   height:150px;
+}
+h6, .h6 {
+  font-size: 0.8rem;
 }
 }
