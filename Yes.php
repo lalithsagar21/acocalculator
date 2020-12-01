@@ -166,21 +166,19 @@ $statevalue = $_SESSION["statevalue"];
 				echo '<h3>'.'Congratulations! You are already part of a high-performing ACO. However, Privia Quality Network may be able to help you earn even more.'.'</h3>'; 
 			   }
 			   ?>
-			   
-               <h6><span style="font-size:12px;"><em>more In earned savings per year.</em></span></h6>
+			   <h6><span style="font-size:12px;"><em>more In earned savings per year.</em></span></h6>
                <p style="text-align: center;"><span style="font-size:12px;"><em>Note: This number does not include direct expenses for each patient or the 2 percent sequestration clawback.<br>This calculation is based on 2018 performance.</em></span></p>
             </div>
-            <div  style="padding-top:0;padding-bottom:0;" class="row img-container">
+			<div  style="padding-top:0;padding-bottom:0;" class="row">
                <div class="col-md-2"></div>
 			   <div class="col-md-4 text-center">
-                  <a href="https://info.priviahealth.com/pathways-to-success/"><button type="button" class="btn btn-purple btn-lg">Recalculate</button></a>
+            <a href="https://info.priviahealth.com/pathways-to-success/" class="button btn-purple button-medium">Recalculate</a>
                </div>
 			   &nbsp;
 			   <div class="col-md-4 text-center">
-                     <a data-toggle="modal" data-target="#exampleModalCenter"><button type="button" class="btn btn-primary btn-lg">Let's Talk</button></a>
+            <a type="button" data-toggle="modal" data-target="#exampleModalCenter" class="button btn-primary button-medium white">Let's Talk</a>
                   </div>
                <div class="col-md-2"></div>
-               </div>
             </div>
          </div>
       </section>
