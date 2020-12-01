@@ -32,7 +32,7 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.stateval
       <section class="container-fluid  bg-secondary xs-center fixed-top pt-4 pb-4">
       <div class="row">
       <div class="col-md-4 col-lg-4 col-xs-1 text-center">
-      <a href=""><img class="logo" src="./assets/img/privia.png" alt="" /></a>
+      <a href="https://info.priviahealth.com/pathways-to-success/"><img class="logo" src="./assets/img/privia.png" alt="" /></a>
       </div>
       <div class="col-md-4 col-lg-4 col-xs-1">
       &nbsp;
@@ -48,7 +48,7 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.stateval
          <div class="container banner-text">
             <h2 class="bt-a">HOW MUCH SHARED SAVINGS COULD YOU EXPECT AS PART OF PRIVIA QUALITY NETWORK?</h2>
          </div>
-         <div  style="margin-bottom:-62px;width:50px;max-width:none;height:50px;display:inline-block;" class="img-circle background-i img-container">
+         <div  class="downarrow img-circle background-i img-container">
             <img src="assets/img/downarrow.png"  width="30" class="img-fluid img-responsive" height="45" border="0">
          </div>
       </section>

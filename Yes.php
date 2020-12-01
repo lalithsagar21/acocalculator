@@ -132,7 +132,7 @@ $statevalue = $_SESSION["statevalue"];
       <section class="container-fluid  bg-secondary xs-center fixed-top pt-4 pb-4">
       <div class="row">
       <div class="col-md-4 col-lg-4 col-xs-1 text-center">
-      <a href=""><img class="logo" src="./assets/img/privia.png" alt="" /></a>
+      <a href="https://info.priviahealth.com/pathways-to-success/"><img class="logo" src="./assets/img/privia.png" alt="" /></a>
       </div>
       <div class="col-md-4 col-lg-4 col-xs-1">
       &nbsp;
@@ -148,7 +148,7 @@ $statevalue = $_SESSION["statevalue"];
          <div class="container banner-text">
             <h2 class="bt-a">HOW MUCH SHARED SAVINGS COULD YOU EXPECT AS PART OF PRIVIA QUALITY NETWORK?</h2>
          </div>
-         <div  style="margin-bottom:-62px;width:50px;max-width:none;height:50px;display:inline-block;" class="img-circle background-i img-container">
+         <div class="downarrow img-circle background-i img-container">
             <img src="assets/img/downarrow.png"  width="30" class="img-fluid img-responsive" height="45" border="0">
          </div>
       </section>
@@ -171,16 +171,15 @@ $statevalue = $_SESSION["statevalue"];
                <p style="text-align: center;"><span style="font-size:12px;"><em>Note: This number does not include direct expenses for each patient or the 2 percent sequestration clawback.<br>This calculation is based on 2018 performance.</em></span></p>
             </div>
             <div  style="padding-top:0;padding-bottom:0;" class="row img-container">
-               <div class="col-md-3 img-container"></div>
-               <div class="col-md-3 img-container">
-                  <div  class="img-container">
-                     <a href="http://localhost/aco" id="" class="button btn-purple button-medium">Recalculate</a>
-                  </div>
+               <div class="col-md-3"></div>
+			   <div class="col-md-3">
+                  <a href="https://info.priviahealth.com/pathways-to-success/" class="button btn-purple button-medium">Recalculate</a>
                </div>
-               <div class="col-md-3 img-container">
-                  <div  class="img-container">
+			   &nbsp;
+			   <div class="col-md-3">
                      <a type="button" data-toggle="modal" data-target="#exampleModalCenter" class="button btn-primary button-medium white">Let's Talk</a>
                   </div>
+               <div class="col-md-3"></div>
                </div>
             </div>
          </div>

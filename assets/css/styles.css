@@ -10304,6 +10304,13 @@ h3 {
   display: inline-block;
   font-weight: 300 !important;
 }
+.downarrow{
+  margin-bottom:-62px;
+  width:50px;
+  max-width:none;
+  height:50px;
+  display:inline-block;
+}
 @media only screen and (max-width: 767px) {
   .bt-a {
     padding: 0 0 0 0;
