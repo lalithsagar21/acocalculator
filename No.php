@@ -61,15 +61,15 @@ $result2 = number_format($_SESSION["result2"]);
                <p style="text-align: center;"><span style="font-size:12px;"><em>Note: This number does not include direct expenses for each patient or the 2 percent sequestration clawback.<br>This calculation is based on 2018 performance.</em></span></p>
             </div>
             <div  style="padding-top:0;padding-bottom:0;" class="row">
-               <div class="col-md-3"></div>
-               <div class="col-md-3">
-                  <a href="https://info.priviahealth.com/pathways-to-success/"  class="button btn-purple button-medium">Recalculate</a>
+            <div class="col-md-2"></div>
+			   <div class="col-md-4 text-center">
+                  <a href="https://info.priviahealth.com/pathways-to-success/"><button type="button" class="btn btn-purple btn-lg">Recalculate</button></a>
                </div>
-               &nbsp;
-               <div class="col-md-3">
-                     <a type="button" data-toggle="modal" data-target="#exampleModalCenter" class="button btn-primary button-medium white">Let's Talk</a>
+			   &nbsp;
+			   <div class="col-md-4 text-center">
+                     <a data-toggle="modal" data-target="#exampleModalCenter"><button type="button" class="btn btn-primary btn-lg">Let's Talk</button></a>
                   </div>
-               <div class="col-md-3"></div>
+               <div class="col-md-2"></div>
             </div>
          </div>
       </section>
