@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
    
      if(isset($_SESSION['result2']))
      {
-         header("Location: result2.php");
+         header("Location: no.php");
          $mysqli -> close($mysqli);
          exit;
      }
@@ -55,7 +55,7 @@ if ($result->num_rows > 0) {
      $_SESSION["result1"] = " $result1";
      if(isset($_SESSION['result1']))
      {
-      header("Location: result1.php");
+      header("Location: yes.php");
       $mysqli -> close($mysqli);
        exit;
      }
