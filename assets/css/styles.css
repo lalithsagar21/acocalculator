@@ -3116,9 +3116,9 @@ fieldset:disabled a.btn {
 
 .btn-lg, .btn-group-lg > .btn {
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.5;
-  border-radius: 0.75rem;
+  border-radius: 0.25rem;
 }
 
 .btn-sm, .btn-group-sm > .btn {
@@ -10299,6 +10299,11 @@ h3 {
 .ddw{
   width: 100%;
 }
+
+.btn {
+  display: inline-block;
+  font-weight: 300 !important;
+}
 @media only screen and (max-width: 767px) {
   .bt-a {
     padding: 0 0 0 0;
@@ -10336,6 +10341,10 @@ h2, .h2 {
 .xs-center{
   text-align: center !important;
 }
+.logo {
+  width: 70%;
+  height: auto;
+}
 }
 @media only screen and (min-width: 768px) and (max-width: 990px) {
   .bt-a {
@@ -10352,5 +10361,9 @@ h2, .h2 {
 }
 h6, .h6 {
   font-size: 0.8rem;
+}
+.logo {
+  width: 90%;
+  height: auto;
 }
 }

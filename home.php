@@ -29,16 +29,21 @@ $resultaco = $mysqli->query("SELECT state_region.statename, existingaco.stateval
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top xs-center" id="mainNav">
-            <div class="container">
-              <ul class="nav navbar-nav navbar-left">
-                <li><a class="navbar-brand js-scroll-trigger" href=""><img class="logo" src="./assets/img/privia.png" alt="" /></a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                <li><a type="button" class="button yellow" data-toggle="modal" data-target="#exampleModalCenter">Get In Touch</a></li>
-              </ul>
-            </div>
-        </nav>
+      <section class="container-fluid  bg-secondary xs-center fixed-top pt-4 pb-4">
+      <div class="row">
+      <div class="col-md-4 col-lg-4 col-xs-1 text-center">
+      <a href=""><img class="logo" src="./assets/img/privia.png" alt="" /></a>
+      </div>
+      <div class="col-md-4 col-lg-4 col-xs-1">
+      &nbsp;
+      </div>
+      <div class="col-md-4 col-lg-4 col-xs-1 text-center">
+      <a data-toggle="modal" data-target="#exampleModalCenter"><button type="button" class="btn btn-warning btn-lg">GET IN TOUCH</button></a>
+      </div>
+      </div>
+      </section>
+       
+         <!--end Navigation-->
         <section class="banner">
          <div class="container banner-text">
             <h2 class="bt-a">HOW MUCH SHARED SAVINGS COULD YOU EXPECT AS PART OF PRIVIA QUALITY NETWORK?</h2>
